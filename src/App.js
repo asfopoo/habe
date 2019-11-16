@@ -1,5 +1,12 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Notifications from "./components/Notifications";
+import Profile from "./components/Profile";
+import Search from "./components/Search";
+import Upload from "./components/Upload";
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,22 +17,25 @@ import {
 export default function App() {
   return (
     <Router>
-      <Navbar> </Navbar>
       <div>
-
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/search">
             <Search />
           </Route>
-          <Route path="/about">
-            <About />
+          <Route path="/profile">
+            <Profile />
           </Route>
-          <Route path="/users">
+          <Route path="/upload">
+            <Upload />
+          </Route>
+          <Route path="/notifications">
+            <Notifications />
+          </Route>
+          {/*<Route path="/users">
             <Users />
-          </Route>
+          </Route>*/}
           <Route path="/">
             <Home />
           </Route>
@@ -35,18 +45,29 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
+/*function Home() {
+  return  <div>
+    <Navbar> </Navbar>
+    <h2>Home</h2>
+  </div>;
 }
 
-function About() {
-  return <h2>About</h2>;
+function Notifications() {
+  return <Notifications/>;
 }
 
 function Users() {
-  return <h2>Users</h2>;
+  return <Users/>;
 }
 
 function Search() {
-  return <h2>Search</h2>;
+  return <Search/>;
 }
+
+function Profile() {
+  return <Profile/>;
+}
+
+function Upload() {
+  return <Upload/>;
+}*/
