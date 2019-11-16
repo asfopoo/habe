@@ -10,7 +10,7 @@ class Upload extends React.Component{
             bottom: '0',
             minWidth: '100%',
             height: '100%',
-            zIndex: '0'
+            zIndex: '-1'
         }
         return(
             <div style={vidRecordStyle}>
