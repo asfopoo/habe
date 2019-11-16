@@ -1,5 +1,8 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
+import EngagmentBar from "./components/EngagementBar"
+import Overide from './Overide.css';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,7 +13,9 @@ import {
 export default function App() {
   return (
     <Router>
-      <Navbar> </Navbar>
+      
+      <Navbar/>
+      <EngagmentBar/>
       <div>
 
 
