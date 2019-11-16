@@ -12,12 +12,16 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 
 
+
+
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+
 
 
 export default function App() {
@@ -31,13 +35,15 @@ export default function App() {
             <Login />
           </Route>
           <Route path="/home">
-            <Home />
+           <div className='primaryContainer'>
+           <Home />
+           </div>
           </Route>
           <Route path="/SignUp">
             <SignUp />
           </Route>
           <Route path="/search">
-            <Search />
+            <div className="primaryContainer"><Search /></div>
           </Route>
           <Route path="/profile">
             <Profile />

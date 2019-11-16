@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function Drawery() {
+export default function EngagementBar() {
   const classes = useStyles();
 
   return (

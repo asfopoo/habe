@@ -13,6 +13,12 @@ import {Link} from "react-router-dom";
 
 
 
+const styles = {
+      width: '100%',
+      position: 'fixed',
+      bottom: 0,
+      margin: '0 auto'
+  };
 
 class Navbar extends Component {
 
@@ -20,7 +26,7 @@ class Navbar extends Component {
     return(
 
 
-        <BottomNavigation>
+        <BottomNavigation style={styles}>
             <BottomNavigationAction label="home" value="home" icon={<HomeIcon />} href={"/home"} />
             <BottomNavigationAction label="search" value="search" icon={<SearchIcon />} href={"/search"} />
             <BottomNavigationAction label="upload" value="upload" icon={<AddCircleIcon />} href={"/upload"}/>

@@ -5,10 +5,11 @@ class Search extends Component {
 
   render(){
     return(
-      <div>
-        <Navbar> </Navbar>
-        <h2>Search</h2>
-      </div>
+      
+      <h1>Search</h1>,
+      <Navbar/>
+      
+      
     )
   }
 

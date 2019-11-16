@@ -1,3 +1,10 @@
 .MuiDrawer-paperAnchorDockedLeft {
     border-right: 0!important;
   }
+
+  .MuiBottomNavigationAction-root{
+    max-width: 110px !important;
+    min-width: auto !important;
+  }
+
+  

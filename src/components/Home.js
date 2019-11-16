@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
+import EngagementBar from './EngagementBar.js';
+import Navbar from "./Navbar.js";
 
-import Navbar from "./Navbar";
 
-class Home extends Component {
 
-  render(){
+
+
+class Home extends Component
+{
+  render()
+  {
     return(
-      <div>
-        <Navbar> </Navbar>
-        <h2>Home</h2>
-      </div>
+
+      <Navbar/>
+     
     )
   }
-
 }
+
 export default Home;
