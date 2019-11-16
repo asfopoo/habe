@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from "./Navbar";
 import VideoRecorder from 'react-video-recorder'
-import 'styled-components'
 
 class Upload extends React.Component{
     render(){

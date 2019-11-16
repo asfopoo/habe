@@ -7,7 +7,9 @@ import Notifications from "./components/Notifications";
 import Profile from "./components/Profile";
 import Search from "./components/Search";
 import Upload from "./components/Upload";
-import 'styled-components'
+import Load from "./components/Load";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
 
 
 import {
@@ -17,6 +19,7 @@ import {
   Link
 } from "react-router-dom";
 
+
 export default function App() {
   return (
     <Router>
@@ -24,6 +27,15 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/SignUp">
+            <SignUp />
+          </Route>
           <Route path="/search">
             <Search />
           </Route>
@@ -36,11 +48,8 @@ export default function App() {
           <Route path="/notifications">
             <Notifications />
           </Route>
-          {/*<Route path="/users">
-            <Users />
-          </Route>*/}
-          <Route path="/">
-            <Home />
+          <Route path="/"> {/*must be last !!!*/}
+            <Load />
           </Route>
         </Switch>
       </div>
