@@ -10,12 +10,13 @@ class Upload extends React.Component{
             bottom: '0',
             minWidth: '100%',
             height: '100%',
-            zIndex: '-1'
+            zIndex: '0'
         }
         return(
             <div style={vidRecordStyle}>
               <Navbar />
                 <VideoRecorder />
+                <button>hi</button>
             </div>
         )
     }
