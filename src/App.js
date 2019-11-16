@@ -35,9 +35,9 @@ export default function App() {
             <Login />
           </Route>
           <Route path="/home">
-           <div className='primaryContainer'>
-           <Home />
-           </div>
+          <div className='primaryContainer'>
+          <Home />
+          </div>
           </Route>
           <Route path="/SignUp">
             <SignUp />
@@ -62,4 +62,3 @@ export default function App() {
     </Router>
   );
 }
-

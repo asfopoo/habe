@@ -15,8 +15,7 @@ class Upload extends React.Component{
         return(
             <div style={vidRecordStyle}>
               <Navbar />
-                <VideoRecorder />
-                <button>hi</button>
+              <VideoRecorder />
             </div>
         )
     }

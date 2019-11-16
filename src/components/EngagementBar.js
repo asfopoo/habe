@@ -29,13 +29,8 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background: 'transparent',
     border: '0!important',
   },
-  MuiDrawerPaperAnchorDockedLeft: {
-
-    border: '0!important',
-  }
 }))
 
 export default function EngagementBar() {
@@ -47,6 +42,11 @@ export default function EngagementBar() {
         className={classes.drawer}
         variant="permanent"
         anchor="left"
+        PaperProps={{
+          style: {
+            backgroundColor: 'transparent',
+          },
+        }}
       >
         <List>
           <ListItem>
