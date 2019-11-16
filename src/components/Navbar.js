@@ -13,17 +13,21 @@ import PersonIcon from '@material-ui/icons/Person';
 
 
 class Navbar extends Component {
-    render() {
-        return (
-            <BottomNavigation>
-                <BottomNavigationAction label="home" value="home" icon={<HomeIcon />} />
-                <BottomNavigationAction label="search" value="search" icon={<SearchIcon />} />
-                <BottomNavigationAction label="upload" value="upload" icon={<AddCircleIcon />} />
-                <BottomNavigationAction label="notifcations" value="notifications" icon={<NotificationsIcon />} />
-                <BottomNavigationAction label="profile" value="profile" icon={<PersonIcon />} />
-            </BottomNavigation>
-        );
-    }
-}
+   render(){ 
+    return(
+    
+        
+        <BottomNavigation>                
+            <BottomNavigationAction label="home" value="home" icon={<HomeIcon />} />
+            <BottomNavigationAction label="search" value="search" icon={<SearchIcon />} />
+            <BottomNavigationAction label="upload" value="upload" icon={<AddCircleIcon />} />
+            <BottomNavigationAction label="notifcations" value="notifications" icon={<NotificationsIcon />} />
+            <BottomNavigationAction label="profile" value="profile" icon={<PersonIcon />} />
+        </BottomNavigation>
 
+
+    )
+}
+    
+}
 export default Navbar;
