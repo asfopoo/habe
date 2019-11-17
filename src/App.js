@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
-import EngagmentBar from "./components/EngagementBar"
 import Overide from './Overide.css';
 import Home from "./components/Home";
 import Notifications from "./components/Notifications";
@@ -13,6 +12,7 @@ import Login from "./components/Login";
 import SignMo from "./components/SignMo";
 import Tags from "./components/Tags";
 import Information from "./components/Information"
+import EngagementBar from "./components/EngagementBar"
 
 
 
@@ -44,6 +44,7 @@ export default function App() {
           </Route>
           <Route path="/home">
           <div className='primaryContainer'>
+          <EngagementBar/>
           <Home />
           </div>
           </Route>
