@@ -45,6 +45,8 @@ export default function EngagementBar() {
         PaperProps={{
           style: {
             backgroundColor: 'transparent',
+            display: 'flex',
+            justifyContent: 'center',
           },
         }}
       >

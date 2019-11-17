@@ -29,7 +29,8 @@ class Login extends Component {
 
   render(){
     return(
-      <div style={{display: 'inline-flex',  justifyContent:'center', alignItems:'center', height: '100vh', 'flex-direction': 'column',  marginLeft: '40%'}}>
+      <div style={{ textAlign: 'center'}}>
+      <div style={{display: 'inline-flex',  justifyContent:'center', alignItems:'center', height: '100vh', 'flex-direction': 'column'}}>
         <img src={require('../Håbe.svg')}  alt={'none'} style={{marginBottom: '3%'}}/>
         <h5 style={{fontFamily: 'Roboto'}}> An easier way to find interesting and relevant content </h5>
         <TextField
@@ -60,6 +61,7 @@ class Login extends Component {
           )}
 
         <a href={'/login'} className="mt-20" style={{fontFamily: 'Roboto'}}> Forgot Password </a>
+      </div>
       </div>
     )
   }
