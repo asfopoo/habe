@@ -9,7 +9,7 @@ class Load extends Component {
   constructor(props) {
     super(props);
     this.state  = {
-      loggedIn: true,
+      loggedIn: false,
       loading: false
     }
   }
@@ -35,7 +35,7 @@ class Load extends Component {
           {this.state.loggedIn ? (
             <Redirect to="/home"/>
           ) : (
-            <Redirect to="/login"/>
+            <Redirect to="/signUp"/>
           )}
         </div>
       )
