@@ -49,7 +49,7 @@ export default function App() {
           </div>
           </Route>
           <Route path="/SignUp">
-            <SignUp />
+            <SignUp className="centerSignUp" />
           </Route>
           <Route path="/Tags">
             <Tags />

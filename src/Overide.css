@@ -58,3 +58,15 @@ body {
   display: flex;
   justify-content: center;
 }*/
+
+
+.customCenterA
+{
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  justify-self: center;
+}
