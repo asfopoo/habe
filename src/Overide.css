@@ -7,4 +7,6 @@
     min-width: auto !important;
   }
 
-  
+  .WroCl{
+    position: static !important;
+  }

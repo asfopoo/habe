@@ -10,6 +10,7 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonIcon from '@material-ui/icons/Person';
 import {Link} from "react-router-dom";
+import zIndex from '@material-ui/core/styles/zIndex';
 
 
 
@@ -18,7 +19,8 @@ const styles = {
       position: 'fixed',
       bottom: 0,
       margin: '0 auto',
-      marginBottom: '10px'
+      marginBottom: '10px',
+      zIndex: 1
   };
 
 class Navbar extends Component {
