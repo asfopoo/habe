@@ -11,6 +11,7 @@ import Load from "./components/Load";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import SignMo from "./components/SignMo";
+import Tags from "./components/Tags";
 import Information from "./components/Information"
 
 
@@ -48,6 +49,9 @@ export default function App() {
           </Route>
           <Route path="/SignUp">
             <SignUp />
+          </Route>
+          <Route path="/Tags">
+            <Tags />
           </Route>
             <Route path="/signMo">
               <SignMo />
