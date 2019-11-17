@@ -31,16 +31,20 @@ class Load extends Component {
     }
     else {
       return (
-        <div>
+       <div className="center-home">
+          <div>
           {this.state.loggedIn ? (
             <Redirect to="/home"/>
           ) : (
             <Redirect to="/signUp"/>
           )}
         </div>
+       </div>
       )
     }
   }
 
 }
+
+
 export default Load;
