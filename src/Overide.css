@@ -11,10 +11,27 @@
     position: static !important;
   }
 
+  html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%
+}
 
   .videoContainer
   {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+    justify-self: center;
+    align-items: center;
 }
-  
+
+.videoItem{
+  margin-bottom: 45px;
+}

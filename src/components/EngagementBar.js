@@ -51,17 +51,17 @@ export default function EngagementBar() {
         <List>
           <ListItem>
               <ListItemIcon>
-                <Favorite />
+                <Favorite color={'secondary'}/>
+              </ListItemIcon>
+          </ListItem>
+          <ListItem href={"/information"}>
+              <ListItemIcon>
+                <Info color={'primary'} />
               </ListItemIcon>
           </ListItem>
           <ListItem>
               <ListItemIcon>
-                <Info />
-              </ListItemIcon>
-          </ListItem>
-          <ListItem>
-              <ListItemIcon>
-                <QuestionAnswer />
+                <QuestionAnswer color={'error'} />
               </ListItemIcon>
           </ListItem>
         </List>

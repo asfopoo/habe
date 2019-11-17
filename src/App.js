@@ -12,6 +12,11 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import SignMo from "./components/SignMo";
 import Tags from "./components/Tags";
+import Information from "./components/Information"
+
+
+
+
 
 
 import {
@@ -58,6 +63,9 @@ export default function App() {
           </Route>
           <Route path="/notifications">
             <Notifications />
+          </Route>
+          <Route path="/information">
+            < Information />
           </Route>
           <Route path="/"> {/*must be last !!!*/}
             <Load />

@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 import ReactPlayer from 'react-player'
+import EngagementBar from './EngagementBar'
 
 class Video extends Component
 {
     render()
     {
         return(
-            <ReactPlayer height={700}  muted={true}
-            url="https://www.returnlogic.com/hubfs/R2018_ASSETS/HOME_ASSETS/iPhone%20Animation/Shopify-Returns-Management-App-Demo-Video-by-Return-Logic.webm"  
+            <div className="videoStructure">
+            <EngagementBar/>
+            <ReactPlayer height={800}  muted={true} loop={true}
+            url="https://cdn2.hubspot.net/hubfs/2738960/test/CircuitThing.mp4?t=1573961961264"  
             playing />
+
+            </div>
         )
     }
 }
