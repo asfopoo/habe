@@ -7,6 +7,13 @@ import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import { FixedSizeList } from 'react-window';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import DirectionsIcon from '@material-ui/icons/Directions';
 
 const Tag = ({
                tagger,
@@ -51,11 +58,12 @@ class Search extends Component {
     return (
       <div style={{ textAlign: 'center'}}>
         <Navbar> </Navbar>
+        
         <div style={{display: 'inline-flex', alignItems:'center', height: '100vh', 'flex-direction': 'column', fontFamily: 'Roboto, sans-serif'}}>
+          
           <h1 style={{color: '#6646EE', fontSize: '50px'}}>Tags</h1>
           <h6 style={{marginTop: '0px', fontFamilyL: 'Roboto, sans-serif', color: '#646464', fontSize: '14px'}}>Tap on what you're interested in, <br></br>and we'll do the rest!</h6>
-          <input type="text" placeholder="Search" value={this.state.search} onChange={this.handleChangeTag} style={{width: '100%', borderRadius: 8 , height: 30}} />
-          <List style={{height:'50%', overflow: 'auto'}}>
+                <List style={{height:'50%', overflow: 'auto'}}>
             {this.state.names.map((name, index) => {
               return (
                 <Tag
