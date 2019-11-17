@@ -9,7 +9,8 @@ class SignMo extends Component {
       firstName: '',
       lastName: '',
       email: '',
-      userName: ''
+      userName: '',
+      password: ''
     }
   }
 
@@ -23,10 +24,12 @@ class SignMo extends Component {
           {/*<h6 style={{marginBottom: '3%', color: '#595959'}}> First Name </h6>*/}
           <input type="text" placeholder="Last name" value={this.state.lastName} onChange={(event,newValue) => this.setState({lastName:newValue})} style={{width: '30%', height: '4%', marginBottom: '3%'}}/>
           <input type="text" placeholder="Email" value={this.state.email} onChange={(event,newValue) => this.setState({email:newValue})} style={{width: '30%', height: '4%', marginBottom: '3%'}}/>
-          <input type="text" placeholder="Username" value={this.state.userName} onChange={(event,newValue) => this.setState({userName:newValue})} style={{width: '30%', height: '4%'}}/>
+          <input type="text" placeholder="User name" value={this.state.userName} onChange={(event,newValue) => this.setState({userName:newValue})} style={{width: '30%', height: '4%', marginBottom: '3%'}}/>
+          <input type="password" placeholder="Password" value={this.state.password} onChange={(event,newValue) => this.setState({password:newValue})} style={{width: '30%', height: '4%'}}/>
+
         </div>
         <div style={{display: 'flex', 'justify-content': 'flex-end', width: '62%'}}>
-          <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF' }} href={"/home"}>
+          <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF' }} href={"/login"}>
             Sign Up
           </Button>
         </div>
