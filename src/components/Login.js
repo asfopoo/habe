@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from "@material-ui/core/Button";
 
 class Login extends Component {
 
@@ -12,20 +13,20 @@ class Login extends Component {
 
   login = () => {
     console.log('I login');
-  }
+  };
 
 
   render(){
     return(
-      <div>
-        <div>
-          <input type="text" placeholder="Email" value={this.state.email} onChange={(event,newValue) => this.setState({email:newValue})}  />
-        </div>
-        <div>
-          <input type="text" placeholder="Password" value={this.state.password} onChange={(event,newValue) => this.setState({password:newValue})}  />
-        </div>
-        <h1>login button</h1>
-        <h1>Forgot Password</h1>
+      <div style={{display: 'inline-flex',  justifyContent:'center', alignItems:'center', height: '100vh', 'flex-direction': 'column',  marginLeft: '40%'}}>
+        <img src={require('../Håbe.svg')}  alt={'none'} style={{marginBottom: '3%'}}/>
+        <h5> An easier way to find interesting and relevant content </h5>
+        <input type="text" placeholder="Email" value={this.state.email} onChange={(event,newValue) => this.setState({email:newValue})} style={{marginBottom: '4%'}}  />
+        <input type="text" placeholder="Password" value={this.state.password} onChange={(event,newValue) => this.setState({password:newValue})} style={{marginBottom: '7%'}}  />
+        <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF', marginBottom: '4%'}} onClick={this.login}>
+          Login
+        </Button>
+        <a href={'/login'}> Forgot Password </a>
       </div>
     )
   }

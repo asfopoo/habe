@@ -10,6 +10,7 @@ import Upload from "./components/Upload";
 import Load from "./components/Load";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
+import SignMo from "./components/SignMo";
 
 
 
@@ -42,6 +43,9 @@ export default function App() {
           <Route path="/SignUp">
             <SignUp />
           </Route>
+            <Route path="/signMo">
+              <SignMo />
+            </Route>
           <Route path="/search">
             <div className="primaryContainer"><Search /></div>
           </Route>
