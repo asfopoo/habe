@@ -11,6 +11,7 @@ import Load from "./components/Load";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import SignMo from "./components/SignMo";
+import Information from "./components/Information"
 
 
 
@@ -58,6 +59,9 @@ export default function App() {
           </Route>
           <Route path="/notifications">
             <Notifications />
+          </Route>
+          <Route path="/information">
+            < Information />
           </Route>
           <Route path="/"> {/*must be last !!!*/}
             <Load />
