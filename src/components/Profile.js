@@ -19,7 +19,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: '350px',
-    marginTop: '20px'
+    marginTop: '20px',
+    marginBottom: '20px',
   },
   media: {
     height: 0,
@@ -82,7 +83,7 @@ export default function Profile() {
           <Typography gutterBottom variant="h5" component="h2">
             0:30s
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography gutterBottom variant="h5" component="h2">
             Winter Hacks
           </Typography>
         </CardContent>
