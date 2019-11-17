@@ -29,7 +29,7 @@ class SignMo extends Component {
 
         </div>
         <div style={{display: 'flex', 'justify-content': 'flex-end', width: '62%'}}>
-          <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF' }} href={"/login"}>
+          <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF' }} href={"/tags"}>
             Sign Up
           </Button>
         </div>
