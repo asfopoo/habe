@@ -19,7 +19,6 @@ const styles = {
       position: 'fixed',
       bottom: 0,
       margin: '0 auto',
-      marginBottom: '10px',
       zIndex: 1
   };
 

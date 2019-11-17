@@ -10,3 +10,11 @@
   .WroCl{
     position: static !important;
   }
+
+
+  .videoContainer
+  {
+    display: flex;
+    justify-content: center;
+}
+  
