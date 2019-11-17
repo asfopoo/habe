@@ -32,8 +32,8 @@ class Login extends Component {
         <img src={require('../Håbe.svg')}  alt={'none'} style={{marginBottom: '3%'}}/>
         <h5> An easier way to find interesting and relevant content </h5>
         <input type="text" placeholder="Email" value={this.state.email} onChange={this.handleChangeEmail} style={{marginBottom: '4%'}}  />
-        <input type="text" placeholder="Password" value={this.state.password} onChange={this.handleChangePassword} style={{marginBottom: '7%'}}  />
-        {this.state.email === 'mo@mo.com' && this.state.password === 'mo' ? (
+        <input type="password" placeholder="Password" value={this.state.password} onChange={this.handleChangePassword} style={{marginBottom: '7%'}}  />
+        {this.state.email === 'mo@motanveer.com' && this.state.password === 'applesauce' ? (
           <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF', marginBottom: '4%'}} href={"/home"}>
             Login
           </Button>
