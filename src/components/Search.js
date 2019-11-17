@@ -48,25 +48,26 @@ class Search extends Component {
 
   render(){
     return (
-      <div style={{display: 'inline-flex', alignItems:'center', height: '100vh', 'flex-direction': 'column',  marginLeft: '40%'}}>
-        <h2 style={{color: '#6646EE'}}>Search</h2>
-        <input type="text" placeholder="Search" value={this.state.search} onChange={this.handleChangeTag} style={{width: '100%', borderRadius: 8 , height: 30}} />
-        <h6>Tap on what you're interested in, </h6>
-        <h6>and we'll do the rest!</h6>
-        <List style={{height:'50%', overflow: 'auto'}}>
-          {this.state.names.map((name, index) => {
-            return (
-              <Tag
-                tagger={name.name}
-                index={index}
-                color={name.color}
-                onClick={() => this.handlePush(name)}
-              />)
-          })}
-        </List>
-        <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF', width: '100%', marginTop: 10}} href={'/home'}  >
-          Finished!
-        </Button>
+      <div style={{ textAlign: 'center'}}>
+        <div style={{display: 'inline-flex', alignItems:'center', height: '100vh', 'flex-direction': 'column', fontFamily: 'Roboto, sans-serif'}}>
+          <h1 style={{color: '#6646EE'}}>Tags</h1>
+          <h6 style={{ margin: '0px !important'}}>Tap on what you're interested in, <br></br>and we'll do the rest!</h6>
+          <input type="text" placeholder="Search" value={this.state.search} onChange={this.handleChangeTag} style={{width: '100%', borderRadius: 8 , height: 30}} />
+          <List style={{height:'50%', overflow: 'auto'}}>
+            {this.state.names.map((name, index) => {
+              return (
+                <Tag
+                  tagger={name.name}
+                  index={index}
+                  color={name.color}
+                  onClick={() => this.handlePush(name)}
+                />)
+            })}
+          </List>
+          <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF', width: '100%', marginTop: 10}} href={'/home'}  >
+            Finished!
+          </Button>
+        </div>
       </div>
     )
   }
