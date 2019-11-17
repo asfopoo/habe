@@ -3,73 +3,6 @@ import EngagementBar from './EngagementBar.js';
 import Navbar from "./Navbar.js";
 import Video from './Video.js';
 
-function doScrolling(elementY, duration) { 
-  var startingY = window.pageYOffset;
-  var diff = elementY - startingY;
-  var start;
-
-  // Bootstrap our animation - it will get called right before next frame shall be rendered.
-  window.requestAnimationFrame(function step(timestamp) {
-    if (!start) start = timestamp;
-    // Elapsed milliseconds since start of scrolling.
-    var time = timestamp - start;
-    // Get percent of completion in range [0, 1].
-    var percent = Math.min(time / duration, 1);
-
-    window.scrollTo(0, startingY + diff * percent);
-
-    // Proceed with animation as long as we wanted it to.
-    if (time < duration) {
-      window.requestAnimationFrame(step);
-    }
-  })
-}
-
-function getElementY(query) {
-  doScrolling((window.pageYOffset + document.querySelector(query).getBoundingClientRect().top), 2);
-}
-
-var isInViewport = function (elem) {
-  var bounding = elem.getBoundingClientRect();
-  return (
-      bounding.top >= 0 &&
-      bounding.left >= 0 &&
-      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
-
-function inViewportCall(dir) {
-  var fullELem = document.getElementsByClassName('videoItem');
-  for (var i = 0; i < fullELem.length; i++) {
-    if (isInViewport(fullELem[i])) {
-        if (dir) {
-          if ((fullELem[i] - 1) < 0) {
-            getElementY(fullELem[i - 1]);
-          }
-        } else {
-          if (fullELem[i] < (fullELem.length - 1)) {
-            getElementY(fullELem[i + 1]);
-          }
-        }
-
-    }
-
-  }
-}
-
-
-
-document.onkeydown = function (e) {
-  var keyCode = e.keyCode;
-  if(keyCode == 38) {
-    inViewportCall(true);
-  } else if(keyCode == 40) {
-    inViewportCall(false);
-    console.log('going down')
-  }
-};
-
 
 
 class Home extends Component
@@ -79,11 +12,11 @@ class Home extends Component
     return(
       <div className="videoContainer">
       <Navbar/>
-      <span className="videoItem"><Video/></span>
-      <span className="videoItem"><Video/></span>
-      <span className="videoItem"><Video/></span>
-      <span className="videoItem"><Video/></span>
-      <span className="videoItem"><Video/></span>
+      <span className="videoItem"><Video videoName="CircuitThing" url="https://cdn2.hubspot.net/hubfs/2738960/test/CircuitThing.mp4?t=1573973464661"/></span>
+      <span className="videoItem"><Video videoName="ChristmasTree" url="https://cdn2.hubspot.net/hubfs/2738960/test/ChristmasTree.mp4?t=1573973463437"/></span>
+      <span className="videoItem"><Video videoName="BreakWrists" url="https://cdn2.hubspot.net/hubfs/2738960/test/BreakWrists.mp4?t=1573973460727"/></span>
+      <span className="videoItem"><Video videoName="RCPlane" url="https://cdn2.hubspot.net/hubfs/2738960/test/RCPlane.mp4?t=1573973462547"/></span>
+      <span className="videoItem"><Video videoName="WoodWorking" url="https://cdn2.hubspot.net/hubfs/2738960/test/WoodWorking.mp4?t=1573973462081"/></span>
       </div>
     )
   }
