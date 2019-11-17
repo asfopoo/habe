@@ -61,11 +61,11 @@ export default function Profile() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Typography component="p">
-           12.5K FOLLOWERS
+        <Typography component="p" style={{ color: '#6200EE'}}>
+           12.5K Followers
         </Typography>
-        <Button size="large" color="default">
-          Follow
+        <Button size="large" color="default" style={{ color: '#6200EE', marginLeft: '6em'}}>
+           Follow
         </Button>
       </CardActions>
     </Card>
@@ -80,14 +80,34 @@ export default function Profile() {
         />
         <CardContent >
           <Typography gutterBottom variant="h5" component="h2">
-            0:30s
+            Sweet Winter Treats
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Winter Hacks
+            The ice frosting cupcakes are a hit!
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+    <Card className={classes.card} style={{ backgroundColor: 'transparent'}}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          alt="Cupcakes"
+          height="200"
+          image="https://www.lifeloveandsugar.com/wp-content/uploads/2017/04/Berries-And-Cream-Cupcakes3.jpg"
+          title="Cupcakes"
+        />
+        <CardContent >
+          <Typography gutterBottom variant="h5" component="h2">
+            Strawberry Yummies
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Delicious and nutritious.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+
     </div>
     )
 }
