@@ -13,7 +13,11 @@ class Home extends Component
     return(
       <div className="videoContainer">
       <Navbar/>
-      <Video/>
+      <span className="videoItem"><Video/></span>
+      <span className="videoItem"><Video/></span>
+      <span className="videoItem"><Video/></span>
+      <span className="videoItem"><Video/></span>
+      <span className="videoItem"><Video/></span>
       </div>
     )
   }
