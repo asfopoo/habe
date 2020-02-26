@@ -4,10 +4,6 @@ import EngagementBar from './EngagementBar'
 
 class Video extends Component
 {
-    constructor(props)
-    {
-        super(props)
-    }
     render()
     {
         return(

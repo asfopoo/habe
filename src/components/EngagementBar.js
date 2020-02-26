@@ -1,11 +1,10 @@
 import React from 'react';
-import { 
-    makeStyles, 
-    Drawer, 
+import {
+    makeStyles,
+    Drawer,
     List,
     ListItem,
     ListItemIcon,
-    Typography,
 } from '@material-ui/core';
 import {
   Favorite,

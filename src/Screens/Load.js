@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Login from "./Login";
-import Home from "./Home";
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 class Load extends Component {

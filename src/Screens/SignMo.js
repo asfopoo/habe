@@ -43,12 +43,12 @@ class SignMo extends Component {
     }
   }
 
- 
+
 
   render(){
     return(
       <div className="moParent" style={styleB}>
-          <img style={styleC} src={require('../windmills.svg')} width="300px"></img>
+          <img style={styleC} src={require('../Assets/Images/windmills.svg')} alt={'Windmills'}width="300px"></img>
           <h2 style={{fontFamily: 'Roboto', alignSelf: 'Center'}}>Almost There!</h2>
           <div className="moFormGroup" style={styleA}>
           <TextField

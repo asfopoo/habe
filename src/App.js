@@ -1,17 +1,15 @@
 import React from 'react';
-import Navbar from "./components/Navbar";
-import Overide from './Overide.css';
-import Home from "./components/Home";
-import Notifications from "./components/Notifications";
-import Profile from "./components/Profile";
-import Search from "./components/Search";
-import Upload from "./components/Upload";
-import Load from "./components/Load";
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
-import SignMo from "./components/SignMo";
-import Tags from "./components/Tags";
-import Information from "./components/Information"
+import Home from "./Screens/Home";
+import Notifications from "./Screens/Notifications";
+import Profile from "./Screens/Profile";
+import Search from "./Screens/Search";
+import Upload from "./Screens/Upload";
+import Load from "./Screens/Load";
+import SignUp from "./Screens/SignUp";
+import Login from "./Screens/Login";
+import SignMo from "./Screens/SignMo";
+import Tags from "./Screens/Tags";
+import Information from "./Screens/Information"
 import EngagementBar from "./components/EngagementBar"
 
 
@@ -23,7 +21,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 

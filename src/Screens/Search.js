@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import Login from "./Login";
-import Home from "./Home";
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import Navbar from "../components/Navbar";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import { FixedSizeList } from 'react-window';
 
 const Tag = ({
-  tagger,
-  index,
-  onClick,
-  color,
-}) => (
+               tagger,
+               index,
+               onClick,
+               color,
+             }) => (
   <ListItem index={index}>
     <Button variant="contained" style={{backgroundColor: color, color: '#FFFFFF', width: '100%'}} onClick={onClick}  >
       {tagger}
@@ -20,7 +17,7 @@ const Tag = ({
   </ListItem>
 );
 
-class Tags extends Component {
+class Search extends Component {
 
   constructor(props) {
     super(props);
@@ -47,29 +44,32 @@ class Tags extends Component {
   }
 
   render(){
-      return (
-        <div style={{display: 'inline-flex', alignItems:'center', height: '100vh', 'flex-direction': 'column',  marginLeft: '40%'}}>
-          <h2 style={{color: '#6646EE'}}>Tags</h2>
-          <input type="text" placeholder="Search" value={this.state.search} onChange={this.handleChangeTag} style={{width: '100%', borderRadius: 8 , height: 30}} />
-          <h6>Tap on what you're interested in, </h6>
-          <h6>and we'll do the rest!</h6>
-          <List style={{height:'50%', overflow: 'auto'}}>
-          {this.state.names.map((name, index) => {
-            return (
-              <Tag
-                tagger={name.name}
-                index={index}
-                color={name.color}
-                onClick={() => this.handlePush(name)}
-              />)
-          })}
+    return (
+      <div style={{ textAlign: 'center'}}>
+        <Navbar> </Navbar>
+
+        <div style={{display: 'inline-flex', alignItems:'center', height: '100vh', 'flex-direction': 'column', fontFamily: 'Roboto, sans-serif'}}>
+
+          <h1 style={{color: '#6646EE', fontSize: '50px'}}>Tags</h1>
+          <h6 style={{marginTop: '0px', fontFamilyL: 'Roboto, sans-serif', color: '#646464', fontSize: '14px'}}>Tap on what you're interested in, <br></br>and we'll do the rest!</h6>
+                <List style={{height:'50%', overflow: 'auto'}}>
+            {this.state.names.map((name, index) => {
+              return (
+                <Tag
+                  tagger={name.name}
+                  index={index}
+                  color={name.color}
+                  onClick={() => this.handlePush(name)}
+                />)
+            })}
           </List>
           <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF', width: '100%', marginTop: 10}} href={'/home'}  >
             Finished!
           </Button>
         </div>
-      )
+      </div>
+    )
   }
 
 }
-export default Tags;
+export default Search;

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Navbar from "./Navbar";
+import React from 'react';
+import Navbar from "../components/Navbar";
 import VideoRecorder from 'react-video-recorder'
 
 class Upload extends React.Component{
@@ -11,7 +11,7 @@ class Upload extends React.Component{
             minWidth: '100%',
             height: '100%',
             zIndex: '-1'
-        }
+        };
         return(
             <div style={vidRecordStyle}>
               <Navbar />

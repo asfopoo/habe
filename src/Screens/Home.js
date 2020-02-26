@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import EngagementBar from './EngagementBar.js';
-import Navbar from "./Navbar.js";
-import Video from './Video.js';
+import Navbar from "../components/Navbar.js";
+import Video from '../components/Video.js';
 
 
 

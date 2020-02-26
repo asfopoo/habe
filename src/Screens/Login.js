@@ -31,7 +31,7 @@ class Login extends Component {
     return(
       <div style={{ textAlign: 'center'}}>
       <div style={{display: 'inline-flex',  justifyContent:'center', alignItems:'center', height: '100vh', 'flex-direction': 'column'}}>
-        <img src={require('../Håbe.svg')}  alt={'none'} style={{marginBottom: '3%'}}/>
+        <img src={require('../Assets/Images/Håbe.svg')} alt={'none'} style={{marginBottom: '3%'}}/>
         <h5 style={{fontFamily: 'Roboto'}}> An easier way to find interesting and relevant content </h5>
         <TextField
           required

@@ -8,7 +8,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 
 
 const useStyles = makeStyles({
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
       marginBottom: 12,
     },
 });
-  
+
 
 export default function Notification(){
     const classes = useStyles();
