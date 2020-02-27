@@ -2,7 +2,7 @@
 ---
 ### A better way for hobbiysts and enthusiasts to find interesting, valuable, and relevant content.
 
-![Habe landing page](https://github.com/asfopoo/habe/blob/master/src/Assets/Images/habeLanding.PNG "Logo Title Text 1")
+![Habe landing page](https://github.com/asfopoo/habe/blob/master/src/Assets/Images/Håbe.svg "Logo Title Text 1")
 
 #### The purpose of this application is a social media sharing website to connect people with ideas, to how-to videos they may be interested in  This is the front end of the project written in react and making use of the material-ui library for a cleaner look
 
