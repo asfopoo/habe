@@ -7,7 +7,7 @@ Instalation Instructions
 --If you don't already have it, download node.  
 -clone this project via git.  
 -cd into the project.  
--run $ npm install.  
+-run $ npm install.    
 
 Running the front end
 -If running the backend also - start that first(refere to the readme ).    
