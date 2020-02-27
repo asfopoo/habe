@@ -15,3 +15,7 @@
 - If running the backend also - start that first(refer to the [readme](https://www.google.com)).    
 - run $ npm start  
 
+### Contributing
+- Create a branch named `<your_name>/<feature>`    
+- Create a pull request to be merged to master  
+- Once reviewed and tested your code may be merged to master thus putting it into production 
