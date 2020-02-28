@@ -12,7 +12,7 @@
 - run $ npm install.    
 
 ### Running the front end
-- If running the backend also - start that first(refer to the [readme](https://www.google.com)).    
+- If running the backend also - start that first (refer to the [readme](https://github.com/asfopoo/habeServer/tree/master).    
 - run $ npm start  
 
 ### Contributing
