@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
-import Navbar from "../components/Navbar.js";
-import Video from '../components/Video.js';
+import Navbar from "../../components/Navbar.js";
+import Video from '../../components/Video.js';
+var jwt = require('jsonwebtoken');
 
 
 
-class Home extends Component
-{
+class Home extends Component {
+
+
+  componentDidMount() {
+    let token = localStorage.getItem("token");
+    jwt.verify(token, 'cmV0dXJubG9naWM=', { algorithm: 'RS256'}, function(err, decoded) {
+      if (err) {
+        console.log(err);
+        console.log(token);
+        console.log(decoded);
+        window.location = '/'
+      }
+    });
+  }
+
   render()
   {
     return(

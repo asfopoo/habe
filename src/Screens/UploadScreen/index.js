@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import VideoRecorder from 'react-video-recorder'
 
 class Upload extends React.Component{
