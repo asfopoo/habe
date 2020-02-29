@@ -36,13 +36,31 @@ class SignMo extends Component {
 
   constructor(props) {
     super(props);
-    this.state  = {
+    this.state = {
+      users: [],
       firstName: '',
       lastName: '',
       email: '',
       username: '',
       password: ''
     }
+
+  }
+
+  async getUsers () {
+    await axios.get('http://localhost:3333/users', {
+    })
+      .then(response => {
+        this.setState({users: response.data});
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  componentDidMount() {
+    this.getUsers = this.getUsers.bind(this);
+    this.getUsers()
   }
 
   handleChangeFirstName = (e) => {
@@ -66,24 +84,33 @@ class SignMo extends Component {
   }
 
   handleSignUp = () => {
-
-    console.log('clicked')
-    axios.post('http://localhost:3333/createUser', {
+    let taken = false;
+    // eslint-disable-next-line array-callback-return
+    this.state.users.map(user => {
+      if(this.state.username === user.username){
+        taken = true;
+      }
+    });
+    if(taken){
+      alert("Username is already taken...Choose another one!");
+    }
+    else {
+      axios.post('http://localhost:3333/createUser', {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
         username: this.state.username,
         password: this.state.password
-    })
-      .then(function (response) {
-        console.log(response);
-        window.location = '/search';
       })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-  //href={"/search"}
+        .then(function (response) {
+          console.log(response);
+          window.location = '/search';
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  };
 
 
   render(){
