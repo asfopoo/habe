@@ -11,16 +11,10 @@ import SignMo from "./Screens/SignMo";
 import Tags from "./Screens/Tags";
 import Information from "./Screens/Information"
 import EngagementBar from "./components/EngagementBar"
-
-
-
-
-
-
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 
