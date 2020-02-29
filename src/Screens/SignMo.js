@@ -52,6 +52,7 @@ class SignMo extends Component {
     })
       .then(response => {
         this.setState({users: response.data});
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -85,6 +86,8 @@ class SignMo extends Component {
 
   handleSignUp = () => {
     let taken = false;
+    // eslint-disable-next-line no-useless-escape
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     // eslint-disable-next-line array-callback-return
     this.state.users.map(user => {
       if(this.state.username === user.username){
@@ -93,6 +96,12 @@ class SignMo extends Component {
     });
     if(taken){
       alert("Username is already taken...Choose another one!");
+    }
+    else if(!regex.test(this.state.email)){
+      alert("Valid email is required")
+    }
+    else if(!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.username || !this.state.password){
+      alert("One or more fields is missing")
     }
     else {
       axios.post('http://localhost:3333/createUser', {
