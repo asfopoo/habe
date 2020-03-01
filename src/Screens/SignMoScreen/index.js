@@ -3,10 +3,9 @@ import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField'
 import axios from 'axios';
 import {getUsers} from "../../actions/getUsersActions";
-import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import store from '../../store';
 import styles from './styles';
+import store from '../../store';
 
 class SignMo extends Component {
 
@@ -27,17 +26,15 @@ class SignMo extends Component {
     await this.props.getUsers()
       .then(response => {
         this.setState({users: response.users.users});
+        console.log('response', response)
       })
       .catch(function (error) {
         console.log(error);
       });
-    console.log('store =>', store.getState())
   };
 
   throwInStore = () => {
-    store.dispatch(
-      this.props.getUsers()
-    );
+
   };
 
   componentDidMount() {
@@ -71,11 +68,13 @@ class SignMo extends Component {
     // eslint-disable-next-line no-useless-escape
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     // eslint-disable-next-line array-callback-return
-    this.state.users.map(user => {
-      if(this.state.username === user.username){
-        taken = true;
-      }
-    });
+    if(this.state.users){
+      this.state.users.map(user => {
+        if(this.state.username === user.username){
+          taken = true;
+        }
+      });
+    }
     if(taken){
       alert("Username is already taken...Choose another one!");
     }
@@ -94,7 +93,6 @@ class SignMo extends Component {
         password: this.state.password
       })
         .then(function (response) {
-          console.log(response);
           window.location = '/search';
         })
         .catch(function (error) {
@@ -165,6 +163,7 @@ class SignMo extends Component {
 
 }
 //export default SignMo;
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
 
 const mapStateToProps = state => {
   const { users } = state;
@@ -174,13 +173,11 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      getUsers,
-    },
-    dispatch
-  );
+const mapDispatchToProps = dispatch =>  ({
+  getUsers: () => store.dispatch(getUsers())
+});
+
+unsubscribe();
 
 export default connect(
   mapStateToProps,

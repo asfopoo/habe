@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import config from '../../config';
 
 const url = "http://localhost:3333";
 
@@ -21,23 +21,21 @@ export const usersFailure = error => {
 };
 
 export const getUsers = () => {
-  /*let reqBody = {
+  let reqBody = {
     "UUID": config.UUID,
-    "name": sensor,
-    "override": setting
-  };*/
+  };
 
 
   return dispatch => {
     return axios
-      .get(`${url}/users`)
+      .post(`${url}/users`, reqBody)
       .then(response => {
         console.log('success', JSON.stringify(response));
-        dispatch(usersSuccess(response.data));
+        return dispatch(usersSuccess(response.data));
       })
       .catch(error => {
         console.log('err', error.response.data.message);
-        dispatch(usersFailure(error.response.data));
+        return dispatch(usersFailure(error.response.data));
       });
   };
 };
