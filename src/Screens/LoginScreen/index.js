@@ -28,7 +28,7 @@ class Login extends Component {
   }
 
   async login () {
-    await axios.post('http://localhost:3333/login', {
+    /*await axios.post('http://localhost:3333/login', {
       username: this.state.username,
       password: this.state.password
     })
@@ -39,7 +39,7 @@ class Login extends Component {
       })
       .catch(function (error) {
         console.log(error);
-      });
+      });*/
   };
 
 

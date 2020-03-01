@@ -34,16 +34,16 @@ class SignMo extends Component {
     console.log('store =>', store.getState())
   };
 
-  throwInStore = () => {
+  /*throwInStore = () => {
     store.dispatch(
       this.props.getUsers()
     );
-  };
+  };*/
 
   componentDidMount() {
     this.getUsers = this.getUsers.bind(this);
     this.getUsers();
-    this.throwInStore();
+    //this.throwInStore();
   }
 
   handleChangeFirstName = (e) => {
@@ -66,7 +66,7 @@ class SignMo extends Component {
     this.setState({password: e.target.value});
   }
 
-  handleSignUp = () => {
+  /*handleSignUp = () => {
     let taken = false;
     // eslint-disable-next-line no-useless-escape
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -101,7 +101,7 @@ class SignMo extends Component {
           console.log(error);
         });
     }
-  };
+  };*/
 
 
   render(){
@@ -155,7 +155,7 @@ class SignMo extends Component {
         onChange={this.handleChangePassword}
         />
 
-<Button className="mt-20" variant="contained" style={styles.button}  onClick={this.handleSignUp}>
+<Button className="mt-20" variant="contained" style={styles.button} >
             Beam Me Up, Scotty!
           </Button>
           </div>
