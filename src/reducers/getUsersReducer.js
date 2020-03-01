@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-
 import {USERS_FAILURE} from "../actions/getUsersActions";
 import {USERS_SUCCESS} from "../actions/getUsersActions";
 

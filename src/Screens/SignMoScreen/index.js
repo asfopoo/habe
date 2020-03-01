@@ -20,7 +20,6 @@ class SignMo extends Component {
       username: '',
       password: ''
     }
-
   }
 
   async getUsers () {
@@ -68,8 +67,8 @@ class SignMo extends Component {
     let taken = false;
     // eslint-disable-next-line no-useless-escape
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // eslint-disable-next-line array-callback-return
     if(this.state.users){
+      // eslint-disable-next-line array-callback-return
       this.state.users.map(user => {
         if(this.state.username === user.username){
           taken = true;

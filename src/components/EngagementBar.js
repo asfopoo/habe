@@ -1,5 +1,5 @@
 import React from 'react';
-import {
+/*import {
     makeStyles,
     Drawer,
     List,
@@ -10,13 +10,13 @@ import {
   Favorite,
   Info,
   QuestionAnswer,
-} from '@material-ui/icons'
+} from '@material-ui/icons'*/
 
 
 
-const drawerWidth = 25;
+//const drawerWidth = 25;
 
-const useStyles = makeStyles(theme => ({
+/*const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     border: '0!important',
@@ -30,14 +30,14 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     border: '0!important',
   },
-}))
+}))*/
 
 export default function EngagementBar() {
-  const classes = useStyles();
+  //const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Drawer
+    <div>
+      {/*<Drawer
         className={classes.drawer}
         variant="permanent"
         anchor="left"
@@ -66,7 +66,7 @@ export default function EngagementBar() {
               </ListItemIcon>
           </ListItem>
         </List>
-      </Drawer>
+      </Drawer>*/}
     </div>
   );
 }

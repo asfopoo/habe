@@ -20,12 +20,10 @@ class Login extends Component {
 
   handleChangeUsername(event) {
     this.setState({username: event.target.value});
-    console.log(this.state.username)
   }
 
   handleChangePassword(event) {
     this.setState({password: event.target.value});
-    console.log(this.state.password)
   }
 
   async login () {
