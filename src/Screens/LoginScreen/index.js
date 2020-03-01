@@ -52,7 +52,6 @@ class Login extends Component {
             required
             id="standard-required"
             label="Username"
-            defaultValue="Username"
             margin="normal"
             value={this.state.username}
             onChange={this.handleChangeUsername}

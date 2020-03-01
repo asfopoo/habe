@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField'
 import axios from 'axios';
+import {getUsers} from "../actions/getUsersActions";
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import store from '../store';
 
 
 
@@ -48,20 +52,26 @@ class SignMo extends Component {
   }
 
   async getUsers () {
-    await axios.get('http://localhost:3333/users', {
-    })
+    await this.props.getUsers()
       .then(response => {
-        this.setState({users: response.data});
-        console.log(response.data);
+        this.setState({users: response.users.users});
       })
       .catch(function (error) {
         console.log(error);
       });
+    console.log('store =>', store.getState())
+  };
+
+  throwInStore = () => {
+    store.dispatch(
+      this.props.getUsers()
+    );
   };
 
   componentDidMount() {
     this.getUsers = this.getUsers.bind(this);
-    this.getUsers()
+    this.getUsers();
+    this.throwInStore();
   }
 
   handleChangeFirstName = (e) => {
@@ -182,4 +192,25 @@ class SignMo extends Component {
   }
 
 }
-export default SignMo;
+//export default SignMo;
+
+const mapStateToProps = state => {
+  const { users } = state;
+
+  return {
+    users: users,
+  };
+};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getUsers,
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignMo);
