@@ -1,12 +1,12 @@
 let styles = {
   mainContainer: {
-    'margin-top': '15%',
-    'display': 'flex',
-    'flex-direction': 'column',
-    'justify-content': 'center',
-    'align-self': 'center',
-    'align-items': 'center',
-    'justify-self': 'center',
+    marginTop: '15%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifySelf: 'center',
   },
   image: {
     width: '220px'

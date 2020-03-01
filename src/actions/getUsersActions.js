@@ -1,5 +1,5 @@
 import axios from "axios";
-import config from '../../config';
+import config from '../config';
 
 const url = "http://localhost:3333";
 
@@ -25,12 +25,10 @@ export const getUsers = () => {
     "UUID": config.UUID,
   };
 
-
   return dispatch => {
     return axios
       .post(`${url}/users`, reqBody)
       .then(response => {
-        console.log('success', JSON.stringify(response));
         return dispatch(usersSuccess(response.data));
       })
       .catch(error => {

@@ -7,7 +7,7 @@ let styles = {
     justifyContent:'center',
     alignItems:'center',
     height: '100vh',
-    'flex-direction': 'column'
+    flexDirection: 'column'
   },
   image: {
     marginBottom: '3%'

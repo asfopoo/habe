@@ -12,7 +12,6 @@ class SignUp extends Component {
   };*/
 
   render(){
-    localStorage.removeItem("token");
     return(
       <div style={styles.mainContainer}>
         <img src={require('../../Assets/Images/Håbe.svg')} alt={'none'} style={styles.image}/>

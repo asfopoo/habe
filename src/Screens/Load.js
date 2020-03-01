@@ -8,24 +8,31 @@ class Load extends Component {
     super(props);
     this.state  = {
       loggedIn: false,
-      loading: false
+      loading: true
     }
   }
 
-  /*logIn = () => {
-    this.setState({loggedIn: true}, () => {
+  logIn = () => {
+    let token = localStorage.getItem("token");
+    if(token){ //token exits therefor logged in
+      this.setState({loggedIn: true});
       this.setState({loading:false});
-    })
-  };*/
+    }
+    else {
+      this.setState({loading:false});
+    }
+  };
 
   componentDidMount() {
     console.log("hit the load");
-    //this.logIn();
+    this.logIn();
 }
 
   render(){
     if  (this.state.loading){
-
+      return(
+        <h1>Loading</h1>
+      )
     }
     else {
       return (

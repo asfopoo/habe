@@ -6,6 +6,7 @@ import {getUsers} from "../../actions/getUsersActions";
 import {connect} from "react-redux";
 import styles from './styles';
 import store from '../../store';
+import config from '../../config';
 
 class SignMo extends Component {
 
@@ -86,6 +87,7 @@ class SignMo extends Component {
     }
     else {
       axios.post('http://localhost:3333/createUser', {
+        UUID: config.UUID,
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
@@ -93,6 +95,7 @@ class SignMo extends Component {
         password: this.state.password
       })
         .then(function (response) {
+          console.log(response)
           window.location = '/search';
         })
         .catch(function (error) {

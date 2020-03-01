@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField'
 import axios from "axios";
 import styles from "./styles";
+import config from '../../config';
 
 class Login extends Component {
 
@@ -29,11 +30,11 @@ class Login extends Component {
 
   async login () {
     await axios.post('http://localhost:3333/login', {
+      UUID : config.UUID,
       username: this.state.username,
       password: this.state.password
     })
       .then(response => {
-        console.log(response.data);
         localStorage.setItem("token", response.data.token);
         window.location = '/home';
       })
@@ -44,6 +45,7 @@ class Login extends Component {
 
 
   render(){
+    localStorage.removeItem("token");
     return(
       <div style={styles.mainContainer}>
         <div style={styles.container}>
@@ -73,6 +75,5 @@ class Login extends Component {
       </div>
     )
   }
-
 }
 export default Login;

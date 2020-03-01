@@ -5,6 +5,7 @@ var jwt = require('jsonwebtoken');
 
 
 
+
 class Home extends Component {
 
 
@@ -12,16 +13,12 @@ class Home extends Component {
     let token = localStorage.getItem("token");
     jwt.verify(token, 'cmV0dXJubG9naWM=', { algorithm: 'RS256'}, function(err, decoded) {
       if (err) {
-        console.log(err);
-        console.log(token);
-        console.log(decoded);
         window.location = '/'
       }
     });
   }
 
-  render()
-  {
+  render() {
     return(
       <div className="videoContainer">
       <Navbar/>
