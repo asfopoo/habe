@@ -33,11 +33,11 @@ export const getUsers = () => {
       .get(`${url}/users`)
       .then(response => {
         console.log('success', JSON.stringify(response));
-        return dispatch(usersSuccess(response.data));
+        dispatch(usersSuccess(response.data));
       })
       .catch(error => {
         console.log('err', error.response.data.message);
-        return dispatch(usersFailure(error.response.data));
+        dispatch(usersFailure(error.response.data));
       });
   };
 };

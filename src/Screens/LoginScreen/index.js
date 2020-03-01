@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField'
 import axios from "axios";
+import styles from "./styles";
 
 class Login extends Component {
 
@@ -44,10 +45,10 @@ class Login extends Component {
 
   render(){
     return(
-      <div style={{ textAlign: 'center'}}>
-        <div style={{display: 'inline-flex',  justifyContent:'center', alignItems:'center', height: '100vh', 'flex-direction': 'column'}}>
-          <img src={require('../../Assets/Images/Håbe.svg')} alt={'none'} style={{marginBottom: '3%'}}/>
-          <h5 style={{fontFamily: 'Roboto'}}> An easier way to find interesting and relevant content </h5>
+      <div style={styles.mainContainer}>
+        <div style={styles.container}>
+          <img src={require('../../Assets/Images/Håbe.svg')} alt={'none'} style={styles.image}/>
+          <h5 style={styles.text}> An easier way to find interesting and relevant content </h5>
           <TextField
             required
             id="standard-required"
@@ -64,10 +65,10 @@ class Login extends Component {
             margin="normal"
             value={this.state.password} onChange={this.handleChangePassword}
           />
-            <Button className="mt-20" variant="contained" style={{marginTop:'20px', backgroundColor: '#6646EE', color: '#FFFFFF', marginBottom: '4%'}} onClick={this.login}>
+            <Button className="mt-20" variant="contained" style={styles.button} onClick={this.login}>
               Login
             </Button>
-          <a href={'/login'} className="mt-20" style={{fontFamily: 'Roboto'}}> Forgot Password </a>
+          <a href={'/login'} className="mt-20" style={styles.text}> Forgot Password </a>
         </div>
       </div>
     )

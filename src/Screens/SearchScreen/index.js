@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import styles from "./styles";
 
 const Tag = ({
                tagger,
@@ -45,13 +46,13 @@ class Search extends Component {
 
   render(){
     return (
-      <div style={{ textAlign: 'center'}}>
+      <div style={styles.mainContainer}>
         <Navbar> </Navbar>
 
-        <div style={{display: 'inline-flex', alignItems:'center', height: '100vh', 'flex-direction': 'column', fontFamily: 'Roboto, sans-serif'}}>
+        <div style={styles.container}>
 
-          <h1 style={{color: '#6646EE', fontSize: '50px'}}>Tags</h1>
-          <h6 style={{marginTop: '0px', fontFamilyL: 'Roboto, sans-serif', color: '#646464', fontSize: '14px'}}>Tap on what you're interested in, <br></br>and we'll do the rest!</h6>
+          <h1 style={styles.h1}>Tags</h1>
+          <h6 style={styles.h6}>Tap on what you're interested in, <br></br>and we'll do the rest!</h6>
                 <List style={{height:'50%', overflow: 'auto'}}>
             {this.state.names.map((name, index) => {
               return (
@@ -63,7 +64,7 @@ class Search extends Component {
                 />)
             })}
           </List>
-          <Button variant="contained" style={{backgroundColor: '#6646EE', color: '#FFFFFF', width: '100%', marginTop: 10}} href={'/home'}  >
+          <Button variant="contained" style={styles.button} href={'/home'}  >
             Finished!
           </Button>
         </div>

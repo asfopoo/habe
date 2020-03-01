@@ -2,39 +2,11 @@ import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField'
 import axios from 'axios';
-import {getUsers} from "../actions/getUsersActions";
+import {getUsers} from "../../actions/getUsersActions";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import store from '../store';
-
-
-
-const styleA =
-{
- display: 'Flex',
- flexDirection: 'column',
- maxWidth: '400px',
- minWidth: 'auto',
- alignSelf: 'Center'
-}
-
-
-const styleB =
-{
- display: 'Flex',
- flexDirection: 'column',
- justifyContent: 'Center',
- alignContent: 'Center',
- justifyItems: 'Center',
- margin:  '0 auto'
-}
-
-const styleC=
-{
-  alignSelf: 'Center'
-
-}
-
+import store from '../../store';
+import styles from './styles';
 
 class SignMo extends Component {
 
@@ -134,10 +106,10 @@ class SignMo extends Component {
 
   render(){
     return(
-      <div className="moParent" style={styleB}>
-          <img style={styleC} src={require('../Assets/Images/windmills.svg')} alt={'Windmills'} width="300px"/>
+      <div className="moParent" style={styles.mainContainer}>
+          <img style={styles.image} src={require('../../Assets/Images/windmills.svg')} alt={'Windmills'} width="300px"/>
           <h2 style={{fontFamily: 'Roboto', alignSelf: 'Center'}}>Almost There!</h2>
-          <div className="moFormGroup" style={styleA}>
+          <div className="moFormGroup" style={styles.container}>
           <TextField
           required
           id="filled-required"
@@ -183,7 +155,7 @@ class SignMo extends Component {
         onChange={this.handleChangePassword}
         />
 
-<Button className="mt-20" variant="contained" style={{marginTop:'20px', backgroundColor: '#6646EE', color: '#FFFFFF', marginBottom: '4%'}}  onClick={this.handleSignUp}>
+<Button className="mt-20" variant="contained" style={styles.button}  onClick={this.handleSignUp}>
             Beam Me Up, Scotty!
           </Button>
           </div>

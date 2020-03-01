@@ -7,7 +7,7 @@ import Upload from "./Screens/UploadScreen";
 import Load from "./Screens/Load";
 import SignUp from "./Screens/SignUpScreen";
 import Login from "./Screens/LoginScreen";
-import SignMo from "./Screens/SignMo";
+import SignMo from "./Screens/SignMoScreen";
 import Tags from "./Screens/Tags";
 import Information from "./Screens/Information"
 import EngagementBar from "./components/EngagementBar"
