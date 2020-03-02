@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField'
-import axios from 'axios';
 import {getUsers} from "../../actions/getUsersActions";
 import {connect} from "react-redux";
 import styles from './styles';
 import store from '../../store';
 import config from '../../config';
+import axios from 'axios';
 
 class SignMo extends Component {
 
@@ -62,24 +62,22 @@ class SignMo extends Component {
     let taken = false;
     // eslint-disable-next-line no-useless-escape
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(this.state.users){
+    if (this.state.users) {
       // eslint-disable-next-line array-callback-return
       this.state.users.map(user => {
-        if(this.state.username === user.username){
+        if (this.state.username === user.username) {
           taken = true;
         }
       });
     }
-    if(taken){
+    if (taken) {
       alert("Username is already taken...Choose another one!");
-    }
-    else if(!regex.test(this.state.email)){
+    } else if (!regex.test(this.state.email)) {
       alert("Valid email is required")
-    }
-    else if(!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.username || !this.state.password){
+    } else if (!this.state.firstName || !this.state.lastName || !this.state.email || !this.state.username || !this.state.password) {
       alert("One or more fields is missing")
-    }
-    else {
+    } else {
+
       axios.post('http://localhost:3333/createUser', {
         UUID: config.UUID,
         firstName: this.state.firstName,
@@ -160,8 +158,6 @@ class SignMo extends Component {
   }
 
 }
-//export default SignMo;
-const unsubscribe = store.subscribe(() => console.log(store.getState()))
 
 const mapStateToProps = state => {
   const { users } = state;
@@ -172,10 +168,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch =>  ({
-  getUsers: () => store.dispatch(getUsers())
+  getUsers: () => store.dispatch(getUsers()),
 });
 
-unsubscribe();
 
 export default connect(
   mapStateToProps,

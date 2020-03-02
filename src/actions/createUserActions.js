@@ -20,6 +20,9 @@ export const createUserFailure = error => {
 };
 
 export const createUser = (firstName, lastName, email, username, password, UUID) => {
+
+  console.log(firstName);
+  console.log(lastName)
   let reqBody = {
     "firstName": firstName,
     "lastName": lastName,
@@ -31,7 +34,7 @@ export const createUser = (firstName, lastName, email, username, password, UUID)
 
   return dispatch => {
     return axios
-      .post(`${url}/users`, reqBody)
+      .post(`${url}/createUser`, reqBody)
       .then(response => {
         return dispatch(createUserSuccess(response.data));
       })

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import {USER_FAILURE} from "../actions/getUsersActions";
-import {USER_SUCCESS} from "../actions/getUsersActions";
+import {USER_FAILURE} from "../actions/userActions";
+import {USER_SUCCESS} from "../actions/userActions";
 
 let INITIAL_STATE ={
   user:{},

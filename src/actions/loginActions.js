@@ -19,14 +19,16 @@ export const loginFailure = error => {
   };
 };
 
-export const login = (jwt) => {
+export const login = (UUID, username, password) => {
   let reqBody = {
-    "jwt": jwt,
+    "UUID": UUID,
+    "username": username,
+    "password": password
   };
 
   return dispatch => {
     return axios
-      .post(`${url}/users`, reqBody)
+      .post(`${url}/login`, reqBody)
       .then(response => {
         return dispatch(loginSuccess(response.data));
       })

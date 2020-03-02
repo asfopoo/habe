@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Navbar from "../../components/Navbar";
 import axios from 'axios';
-import styles from "../SearchScreen/styles";
+import styles from "./styles";
 import Button from "@material-ui/core/Button";
+var jwt = require('jsonwebtoken');
 
 
 class Profile extends Component {
@@ -13,7 +14,8 @@ class Profile extends Component {
       userId: localStorage.getItem("userId"),
       token: localStorage.getItem("token"),
       user: [],
-      interests: []
+      interests: [],
+      isLoading: true
     };
   }
 
@@ -24,10 +26,7 @@ class Profile extends Component {
 }
 
   async getData (self) {
-    console.log(localStorage.getItem("userId"))
     let arr = [];
-    console.log('here')
-    console.log('user is ', this.state.userId)
     axios.post('http://localhost:3333/user', {
       jwt: this.state.token,
       userId: this.state.userId
@@ -62,45 +61,62 @@ class Profile extends Component {
   componentDidMount = () => {
     let self = this;
     this.getData(self)
+
+    let token = localStorage.getItem("token");
+    console.log(localStorage.getItem("userId"))
+    jwt.verify(token, 'cmV0dXJubG9naWM=', { algorithm: 'RS256'}, function(err, decoded) {
+      if (err) {
+        window.location = '/'
+      }
+      else{
+        self.setState({isLoading: false})
+      }
+    });
   };
 
   render() {
-    console.log(this.state.interests);
-    return (
-      <div style={styles.mainContainer}>
-        <h1>Profile</h1>
-        <div style={styles.rowContainer}>
-          <div style={styles.container}>
-            <h3>First Name</h3>
-            <h5>{this.state.user.first_name}</h5>
-            <h3>Last Name</h3>
-            <h5>{this.state.user.last_name}</h5>
-            <h3>Email</h3>
-            <h5>{this.state.user.email}</h5>
-            <h3>Username</h3>
-            <h5>{this.state.user.username}</h5>
-            <Button variant="contained" style={styles.button} onClick={this.logout}  >
-              Logout
-            </Button>
-          </div>
-          <div style={styles.container}>
-            <h3>Interests</h3>
-            {this.state.interests.length > 0 && (
-              this.state.interests.map(interest => {
-                return(
-                <h5>{interest}</h5>
-                )
-              })
-            )}
-            {this.state.interests.length === 0 && (
-                  <h5>None</h5>
-                )
+    if(this.state.isLoading){
+      return(
+        <h1> </h1>
+      )
+    }
+    else {
+      return (
+        <div style={styles.mainContainer}>
+          <h1>Profile</h1>
+          <div style={styles.rowContainer}>
+            <div style={styles.container}>
+              <h3>First Name</h3>
+              <h5>{this.state.user.first_name}</h5>
+              <h3>Last Name</h3>
+              <h5>{this.state.user.last_name}</h5>
+              <h3>Email</h3>
+              <h5>{this.state.user.email}</h5>
+              <h3>Username</h3>
+              <h5>{this.state.user.username}</h5>
+            </div>
+            <div style={styles.container}>
+              <h3>Interests</h3>
+              {this.state.interests.length > 0 && (
+                this.state.interests.map(interest => {
+                  return (
+                    <h5>{interest}</h5>
+                  )
+                })
+              )}
+              {this.state.interests.length === 0 && (
+                <h5>None</h5>
+              )
               }
+              <Button variant="contained" style={styles.button} onClick={this.logout}>
+                Logout
+              </Button>
+            </div>
           </div>
+          <Navbar> </Navbar>
         </div>
-        <Navbar> </Navbar>
-      </div>
-    )
+      )
+    }
   }
 }
 

@@ -3,17 +3,19 @@ let styles = {
     textAlign: 'center'
   },
   container: {
-    display: 'inline-flex',
+    display: 'flex',
     alignItems:'center',
-    height: '100vh',
+    //height: '100vh',
     flexDirection: 'column',
     fontFamily: 'Roboto, sans-serif',
-    'justify-content': 'space-between'
+    marginRight: 10,
+    marginLeft: 10
   },
   rowContainer: {
     flexDirection: 'row',
-    marginRight: 20,
-    marginLeft: 20
+    alignItems:'center',
+    //'justify-content': 'space-between',
+
   },
   h1: {
     color: '#6646EE',
@@ -28,8 +30,7 @@ let styles = {
   button: {
     backgroundColor: '#6646EE',
     color: '#FFFFFF',
-    width: '50%',
-    paddingTop: 10
+    width: '25%',
   }
 };
 

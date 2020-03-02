@@ -28,7 +28,7 @@ export const getInterests = (jwt, userId) => {
 
   return dispatch => {
     return axios
-      .post(`${url}/users`, reqBody)
+      .post(`${url}/interests`, reqBody)
       .then(response => {
         return dispatch(getInterestsSuccess(response.data));
       })

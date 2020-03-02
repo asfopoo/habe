@@ -28,7 +28,7 @@ export const getProfile = (jwt, userId) => {
 
   return dispatch => {
     return axios
-      .post(`${url}/users`, reqBody)
+      .post(`${url}/profile`, reqBody)
       .then(response => {
         return dispatch(getProfileSuccess(response.data));
       })
