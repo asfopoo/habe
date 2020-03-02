@@ -41,18 +41,22 @@ class Search extends Component {
         interests.push(name);
       }
     });
-    await axios.post('http://localhost:3333/interests', {
-      userId: 1,
-      interests : interests,
-      jwt: token,
-    })
-      .then(response => {
-        console.log(response);
-        window.location = '/home';
+    if(interests) {
+      await axios.post('http://localhost:3333/interests', {
+        userId: 1,
+        interests: interests,
+        jwt: token,
       })
-      .catch(function (error) {
-        console.log(error);
-      });
+        .then(response => {
+          window.location = '/home';
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+    else{
+      window.location = '/home';
+    }
   };
 
   handlePush = name =>{

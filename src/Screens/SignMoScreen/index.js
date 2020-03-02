@@ -103,7 +103,6 @@ class SignMo extends Component {
     }
   };
 
-
   render(){
     localStorage.removeItem("token");
     return(
