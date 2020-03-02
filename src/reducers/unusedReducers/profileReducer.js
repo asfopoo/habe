@@ -1,36 +1,37 @@
 import { combineReducers } from "redux";
-import {LOGIN_FAILURE} from "../actions/loginActions";
-import {LOGIN_SUCCESS} from "../actions/loginActions";
+import {GET_PROFILE_FAILURE} from "../../actions/unusedActions/getProfileActions";
+import {GET_PROFILE_SUCCESS} from "../../actions/unusedActions/getProfileActions";
 
 let INITIAL_STATE ={
-  user:{},
+  profile:{},
   isloading: false,
   errorResponse: false,
   errorMessage: null,
 };
 
-const loginReducer = (state = INITIAL_STATE, action) => {
+const getProfileReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case GET_PROFILE_SUCCESS:
       return {
         ...state,
-        //type: LOGIN_SUCCESS,
+        //type: PROFILE_SUCCESS,
         isLoading: false,
         errorResponse: false,
       };
     // Extract error message to display
-    case LOGIN_FAILURE:
+    case GET_PROFILE_FAILURE:
       return {
         ...state,
         isLoading: false,
         errorResponse: true,
         errorMessage: action.error
       };
+    // Don't think this gets called
     default:
       return state;
   }
 };
 
 export default combineReducers({
-  login: loginReducer
+  profile: getProfileReducer
 });

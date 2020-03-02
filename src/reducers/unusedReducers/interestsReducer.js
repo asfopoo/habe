@@ -1,37 +1,37 @@
 import { combineReducers } from "redux";
-import {USER_FAILURE} from "../actions/userActions";
-import {USER_SUCCESS} from "../actions/userActions";
+import {GET_INTERESTS_FAILURE} from "../../actions/unusedActions/getInterestsActions";
+import {GET_INTERESTS_SUCCESS} from "../../actions/unusedActions/getInterestsActions";
 
 let INITIAL_STATE ={
-  user:{},
+  interest: {},
   isloading: false,
   errorResponse: false,
   errorMessage: null,
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const getInterestsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    // Take all returned user info and put it in store
-    case USER_SUCCESS:
+    // Take all returned info and put it in store
+    case GET_INTERESTS_SUCCESS:
       return {
         ...state,
+        //type: GET_INTEREST_SUCCESS,
         isLoading: false,
         errorResponse: false,
       };
     // Extract error message to display
-    case USER_FAILURE:
+    case GET_INTERESTS_FAILURE:
       return {
         ...state,
         isLoading: false,
         errorResponse: true,
         errorMessage: action.error
       };
-    // Don't think this gets called
     default:
       return state;
   }
 };
 
 export default combineReducers({
-  user: userReducer
+  interest: getInterestsReducer
 });

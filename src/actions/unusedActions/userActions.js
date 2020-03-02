@@ -1,5 +1,5 @@
 import axios from "axios";
-import config from '../config';
+import config from '../../config';
 
 const url = "http://localhost:3333";
 

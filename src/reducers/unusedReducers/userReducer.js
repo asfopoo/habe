@@ -1,36 +1,37 @@
 import { combineReducers } from "redux";
-import {CREATE_USER_FAILURE} from "../actions/createUserActions";
-import {CREATE_USER_SUCCESS} from "../actions/createUserActions";
+import {USER_FAILURE} from "../../actions/unusedActions/userActions";
+import {USER_SUCCESS} from "../../actions/unusedActions/userActions";
 
 let INITIAL_STATE ={
-  user: {},
+  user:{},
   isloading: false,
   errorResponse: false,
   errorMessage: null,
 };
 
-const createUserReducer = (state = INITIAL_STATE, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    // Take all returned info and put it in store
-    case CREATE_USER_SUCCESS:
+    // Take all returned user info and put it in store
+    case USER_SUCCESS:
       return {
         ...state,
         isLoading: false,
         errorResponse: false,
       };
     // Extract error message to display
-    case CREATE_USER_FAILURE:
+    case USER_FAILURE:
       return {
         ...state,
         isLoading: false,
         errorResponse: true,
         errorMessage: action.error
       };
+    // Don't think this gets called
     default:
       return state;
   }
 };
 
 export default combineReducers({
-  createUser: createUserReducer
+  user: userReducer
 });
