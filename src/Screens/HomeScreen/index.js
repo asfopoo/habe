@@ -4,8 +4,6 @@ import Video from '../../components/Video.js';
 var jwt = require('jsonwebtoken');
 
 
-
-
 class Home extends Component {
 
 

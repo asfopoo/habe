@@ -32,14 +32,10 @@ class SignMo extends Component {
       });
   };
 
-  throwInStore = () => {
-
-  };
 
   componentDidMount() {
     this.getUsers = this.getUsers.bind(this);
     this.getUsers();
-    this.throwInStore();
   }
 
   handleChangeFirstName = (e) => {

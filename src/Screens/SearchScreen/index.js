@@ -34,6 +34,7 @@ class Search extends Component {
 
   async finished () {
     let token = localStorage.getItem("token");
+    let userId = localStorage.getItem("userId");
     let interests = [];
     // eslint-disable-next-line array-callback-return
     this.state.names.map(name => {
@@ -43,7 +44,7 @@ class Search extends Component {
     });
     if(interests) {
       await axios.post('http://localhost:3333/interests', {
-        userId: 1,
+        userId: userId,
         interests: interests,
         jwt: token,
       })
