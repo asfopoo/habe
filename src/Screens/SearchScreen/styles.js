@@ -6,7 +6,7 @@ let styles = {
     display: 'inline-flex',
     alignItems:'center',
     height: '100vh',
-    'flex-direction': 'column',
+    flexDirection: 'column',
     fontFamily: 'Roboto, sans-serif'
   },
   h1: {

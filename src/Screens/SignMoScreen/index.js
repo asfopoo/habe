@@ -26,7 +26,6 @@ class SignMo extends Component {
     await this.props.getUsers()
       .then(response => {
         this.setState({users: response.users.users});
-        console.log('response', response)
       })
       .catch(function (error) {
         console.log(error);
@@ -94,7 +93,8 @@ class SignMo extends Component {
         password: this.state.password
       })
         .then(function (response) {
-          console.log(response)
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("userId", response.data.user);
           window.location = '/search';
         })
         .catch(function (error) {
@@ -105,6 +105,7 @@ class SignMo extends Component {
 
 
   render(){
+    localStorage.removeItem("token");
     return(
       <div className="moParent" style={styles.mainContainer}>
           <img style={styles.image} src={require('../../Assets/Images/windmills.svg')} alt={'Windmills'} width="300px"/>

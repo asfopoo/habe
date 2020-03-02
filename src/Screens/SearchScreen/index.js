@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import styles from "./styles";
+import axios from 'axios';
 
 const Tag = ({
                tagger,
@@ -25,10 +26,34 @@ class Search extends Component {
     this.state  = {
       names: [{'name':'Electronics' , 'color': '#1F1F1F'}, {'name':'WoodWorking', 'color': '#1F1F1F'}, {'name':'Circuits', 'color': '#1F1F1F'}, {'name':'Radio Telescopes', 'color': '#1F1F1F'}, {'name':'Baking', 'color': '#1F1F1F'}, {'name':'Cats', 'color': '#1F1F1F'}, {'name':'Coffee', 'color': '#1F1F1F'}, {'name':'Sleep', 'color': '#1F1F1F'}, {'name':'Functional Programming', 'color': '#1F1F1F'}, {'name':'Iphones', 'color': '#1F1F1F'}, {'name':'Android', 'color': '#1F1F1F'}, {'name':'Motts Applesauce', 'color': '#1F1F1F'}, {'name':'Fishing', 'color': '#1F1F1F'}, {'name':'Hunting', 'color': '#1F1F1F'}, {'name':'Knitting', 'color': '#1F1F1F'}, {'name':'Crafts', 'color': '#1F1F1F'} ],
       color: '#1F1F1F',
-      search: ''
+      search: '',
     }
     this.handleChangeTag = this.handleChangeTag.bind(this);
+    this.finished = this.finished.bind(this);
   }
+
+  async finished () {
+    let token = localStorage.getItem("token");
+    let interests = [];
+    // eslint-disable-next-line array-callback-return
+    this.state.names.map(name => {
+      if(name.color === "#6646EE"){
+        interests.push(name);
+      }
+    });
+    await axios.post('http://localhost:3333/interests', {
+      userId: 1,
+      interests : interests,
+      jwt: token,
+    })
+      .then(response => {
+        console.log(response);
+        window.location = '/home';
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   handlePush = name =>{
     if(name.color === '#1F1F1F'){
@@ -64,7 +89,7 @@ class Search extends Component {
                 />)
             })}
           </List>
-          <Button variant="contained" style={styles.button} href={'/home'}  >
+          <Button variant="contained" style={styles.button} onClick={this.finished}  >
             Finished!
           </Button>
         </div>
