@@ -5,12 +5,6 @@ import styles from './styles';
 
 class SignUp extends Component {
 
-  /*signUp = () => {
-    return(
-    <Router location="/home"/>
-    )
-  };*/
-
   render(){
     return(
       <div style={styles.mainContainer}>
