@@ -17,6 +17,7 @@ class Home extends Component {
   componentDidMount = () => {
     let self = this;
     let token = localStorage.getItem("token");
+    console.log(localStorage.getItem("userId"))
     jwt.verify(token, 'cmV0dXJubG9naWM=', { algorithm: 'RS256'}, function(err, decoded) {
       if (err) {
         window.location = '/'

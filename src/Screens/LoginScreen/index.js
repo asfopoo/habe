@@ -34,7 +34,7 @@ class Login extends Component {
     })
       .then(response => {
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("userId", response.data.user);
+        localStorage.setItem("userId", response.data.user[0].id);
         window.location = '/home';
       })
       .catch(function (error) {
