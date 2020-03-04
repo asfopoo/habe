@@ -3,7 +3,7 @@
 ### A better way for hobbiysts and enthusiasts to find interesting, valuable, and relevant content.
 ---  
 
-#### The purpose of this application is a social media sharing website to connect people with ideas, to how-to videos they may be interested in  This is the front end of the project written in react and making use of the material-ui library for a cleaner look
+#### The purpose of this application is a social media sharing website to connect people with ideas, to how-to videos they may be interested in.  This is the front end of the project written in react and making use of the material-ui library for a cleaner look
 
 ### Installation Instructions
 - If you don't already have it, download node.  
@@ -18,4 +18,8 @@
 ### Contributing
 - Create a branch named `<your_name>/<feature>`    
 - Create a pull request to be merged to master  
-- Once reviewed and tested your code may be merged to master thus putting it into production 
+- Once reviewed and tested your code may be merged to master
+
+### Authors
+- Not all of this repo was created by me, contributors include Mo, Journey, and David.  I have reorganized the entire project and most of what you see now was done by me with the exception of the home screen (I did the jwt auth stuff though).  Please talk to me if you have questions and I will gladly clarify.
+- Design by Mo
