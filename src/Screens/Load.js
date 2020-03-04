@@ -41,7 +41,7 @@ class Load extends Component {
           {this.state.loggedIn ? (
             <Redirect to="/home"/>
           ) : (
-            <Redirect to="/signUp"/>
+            <Redirect to="/Landing"/>
           )}
         </div>
        </div>

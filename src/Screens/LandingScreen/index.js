@@ -10,7 +10,7 @@ class SignUp extends Component {
       <div style={styles.mainContainer}>
         <img src={require('../../Assets/Images/Håbe.svg')} alt={'none'} style={styles.image}/>
         <h5 style={styles.text}> An easier way to find interesting and relevant content </h5>
-        <Button variant="contained" style={styles.button} href={"/signMo"}>
+        <Button variant="contained" style={styles.button} href={"/SignUp"}>
           Sign Up
         </Button>
         <h5 style={styles.text}> Already have an account? </h5>

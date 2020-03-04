@@ -89,7 +89,7 @@ class SignMo extends Component {
         .then(function (response) {
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("userId", response.data.user);
-          window.location = '/search';
+          window.location = '/Interests';
         })
         .catch(function (error) {
           console.log(error);
