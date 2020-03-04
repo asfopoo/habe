@@ -30,7 +30,8 @@ let styles = {
   button: {
     backgroundColor: '#6646EE',
     color: '#FFFFFF',
-    width: '25%',
+    width: '13%',
+    marginBottom: '20%'
   }
 };
 
