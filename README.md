@@ -21,5 +21,5 @@
 - Once reviewed and tested your code may be merged to master
 
 ### Authors
-- Not all of this repo was created by me, contributors include Mo, Journey, and David.  I have reorganized the entire project and most of what you see now is was done by me with the exeption of the home screen(I did the jwt auth stuff though).  Please talk to me if you have questions and I will gladly clarify.
+- Not all of this repo was created by me, contributors include Mo, Journey, and David.  I have reorganized the entire project and most of what you see now was done by me with the exception of the home screen (I did the jwt auth stuff though).  Please talk to me if you have questions and I will gladly clarify.
 - Design by Mo
