@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from "../../components/Navbar.js";
 import Video from '../../components/Video.js';
+import styles from './styles';
 var jwt = require('jsonwebtoken');
 
 
@@ -36,7 +37,7 @@ class Home extends Component {
     }
     else {
       return (
-        <div className="videoContainer">
+        <div style={styles.nav}>
           <Navbar/>
           <span className="videoItem"><Video videoName="CircuitThing"
                                              url="https://cdn2.hubspot.net/hubfs/2738960/test/Alvin%20Yakatori/PersonalFitnessCaption.mp4?t=1573982576283"/></span>

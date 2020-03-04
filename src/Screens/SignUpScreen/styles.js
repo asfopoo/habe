@@ -1,21 +1,27 @@
 let styles = {
   mainContainer: {
-    marginTop: '15%',
-    display: 'flex',
+    display: 'Flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignSelf: 'center',
-    alignItems: 'center',
-    justifySelf: 'center',
+    justifyContent: 'Center',
+    alignContent: 'Center',
+    justifyItems: 'Center',
+    margin:  '0 auto'
+  },
+  container: {
+    display: 'Flex',
+    flexDirection: 'column',
+    maxWidth: '400px',
+    minWidth: 'auto',
+    alignSelf: 'Center'
   },
   image: {
-    width: '220px'
-  },
-  text: {
-    fontFamily: 'Roboto'
+    alignSelf: 'Center'
   },
   button: {
-    backgroundColor: '#6646EE', color: '#FFFFFF'
+    marginTop:'20px',
+    backgroundColor: '#6646EE',
+    color: '#FFFFFF',
+    marginBottom: '4%'
   }
 };
 

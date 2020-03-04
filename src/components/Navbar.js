@@ -21,9 +21,9 @@ class Navbar extends Component {
     return(
         <BottomNavigation style={styles}>
             <BottomNavigationAction label="home" value="home" icon={<HomeIcon fontSize="large"/>} href={"/home"} />
-            <BottomNavigationAction label="search" value="search" icon={<SearchIcon fontSize="large"/>} href={"/search"} />
+            <BottomNavigationAction label="Interests" value="Interests" icon={<SearchIcon fontSize="large"/>} href={"/Interests"} />
             <BottomNavigationAction label="upload" value="upload"  icon={<AddCircleIcon fontSize="large" color="primary" />} href={"/upload"}/>
-            <BottomNavigationAction label="notifcations" value="notifications" icon={<FavoriteIcon fontSize="large"/>} href={"/notifications"} />
+            <BottomNavigationAction label="Notifications" value="Notifications" icon={<FavoriteIcon fontSize="large"/>} href={"/Notifications"} />
             <BottomNavigationAction label="profile" value="profile" icon={<PersonIcon fontSize="large"/>} href={"/profile"} />
         </BottomNavigation>
     )

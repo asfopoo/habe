@@ -1,5 +1,7 @@
 import React from 'react'
-import {
+import Navbar from "../../components/Navbar.js";
+
+/*import {
     Grid
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,15 +24,16 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
-});
+});*/
 
 
 export default function Notification(){
-    const classes = useStyles();
+    /*const classes = useStyles();*/
 
     return(
       <div>
-        <Navbar />
+          <Navbar/>
+        {/*<Navbar />
         <Grid
         container
         direction="column"
@@ -100,7 +103,7 @@ export default function Notification(){
             <Button size="small">Watch</Button>
         </CardActions>
         </Card>
-        </Grid>
+        </Grid>*/}
       </div>
     )
 }

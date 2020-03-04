@@ -2,12 +2,12 @@ import React from 'react';
 import Home from "./Screens/HomeScreen";
 import Notifications from "./Screens/NotificationsScreen";
 import Profile from "./Screens/ProfileScreen";
-import Search from "./Screens/SearchScreen";
+import Interests from "./Screens/InterestsScreen";
 import Upload from "./Screens/UploadScreen";
 import Load from "./Screens/Load";
-import SignUp from "./Screens/SignUpScreen";
+import Landing from "./Screens/LandingScreen";
 import Login from "./Screens/LoginScreen";
-import SignMo from "./Screens/SignMoScreen";
+import SignUp from "./Screens/SignUpScreen";
 import Tags from "./Screens/Tags";
 import Information from "./Screens/Information"
 import EngagementBar from "./components/EngagementBar"
@@ -34,17 +34,17 @@ export default function App() {
             <Home />
             </div>
             </Route>
-            <Route path="/SignUp">
-              <SignUp className="centerSignUp" />
+            <Route path="/Landing">
+              <Landing className="centerSignUp" />
             </Route>
             <Route path="/Tags">
               <Tags />
             </Route>
-              <Route path="/signMo">
-                <SignMo />
+              <Route path="/SignUp">
+                <SignUp />
               </Route>
-            <Route path="/search">
-              <div className="primaryContainer"><Search /></div>
+            <Route path="/Interests">
+              <div className="primaryContainer"><Interests /></div>
             </Route>
             <Route path="/profile">
               <Profile />
@@ -52,7 +52,7 @@ export default function App() {
             <Route path="/upload">
               <Upload />
             </Route>
-            <Route path="/notifications">
+            <Route path="/Notifications">
               <Notifications />
             </Route>
             <Route path="/information">
